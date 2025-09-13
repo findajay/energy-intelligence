@@ -1,0 +1,523 @@
+/* ===== AIRBNB DESIGN SYSTEM INSPIRED THEME ===== */
+/* Friendly, approachable design with Airbnb's signature coral and clean aesthetics */
+
+:root {
+  /* Green eco-friendly color palette - natural, sustainable, trustworthy */
+  --airbnb-rausch: #22c55e;          /* Primary green */
+  --airbnb-babu: #10b981;            /* Emerald accent */
+  --airbnb-arches: #16a34a;          /* Forest green accent */
+  --airbnb-hof: #484848;             /* Dark gray text */
+  --airbnb-foggy: #767676;           /* Medium gray text */
+  --airbnb-white: #ffffff;           /* Pure white */
+  --airbnb-light-gray: #f7f7f7;      /* Light background */
+  --airbnb-border: #dddddd;          /* Light border */
+  --airbnb-dark-gray: #222222;       /* Very dark text */
+  --airbnb-success: #059669;         /* Success green */
+  --airbnb-warning: #f59e0b;         /* Warning amber */
+  --airbnb-danger: #dc2626;          /* Error red */
+  --airbnb-shadow: rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  --airbnb-shadow-hover: rgba(0, 0, 0, 0.15); /* Hover shadow */
+}
+
+/* Global Container Styling - Airbnb style */
+.resource-discovery-container {
+  background: var(--airbnb-white);
+  min-height: 100vh;
+  font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--airbnb-hof);
+  line-height: 1.43;
+  letter-spacing: normal;
+}
+
+/* Discovery Button - Airbnb friendly style */
+.discovery-card {
+  border: 1px solid var(--airbnb-border);
+  box-shadow: 0 2px 8px var(--airbnb-shadow);
+  transition: all 0.2s ease;
+  background: var(--airbnb-white);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.discovery-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.1), transparent);
+  transition: left 0.4s ease;
+}
+
+.discovery-card:hover::before {
+  left: 100%;
+}
+
+.discovery-card:hover {
+  box-shadow: 0 6px 16px var(--airbnb-shadow-hover);
+  transform: translateY(-2px);
+  border-color: var(--airbnb-rausch);
+}
+
+/* Summary Cards - Airbnb coral theme */
+.summary-card {
+  background: linear-gradient(135deg, var(--airbnb-rausch) 0%, var(--airbnb-arches) 100%);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.25);
+  transition: all 0.2s ease;
+  overflow: hidden;
+  position: relative;
+  color: var(--airbnb-white);
+}
+
+.summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--airbnb-white);
+  opacity: 0.3;
+}
+
+.summary-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 64px;
+  height: 64px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(20px, 20px);
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.35);
+}
+
+/* Microservice Cards - Clean Airbnb style */
+.microservice-card {
+  background: var(--airbnb-white);
+  border: 1px solid var(--airbnb-border);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--airbnb-shadow);
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+  color: var(--airbnb-hof);
+  position: relative;
+  overflow: hidden;
+}
+
+.microservice-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--airbnb-rausch);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.microservice-card:hover::before {
+  opacity: 1;
+}
+
+.microservice-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--airbnb-shadow-hover);
+  border-color: var(--airbnb-rausch);
+}
+
+/* Resource Type Featured Cards - Airbnb showcase style */
+.resource-type-featured {
+  background: var(--airbnb-white);
+  color: var(--airbnb-hof);
+  border: 1px solid var(--airbnb-border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px var(--airbnb-shadow);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.resource-type-featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--airbnb-rausch), var(--airbnb-babu), var(--airbnb-arches));
+}
+
+.resource-type-featured:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px var(--airbnb-shadow-hover);
+  border-color: var(--airbnb-rausch);
+}
+
+/* Compact Resource Cards - Airbnb list style */
+.resource-type-compact {
+  background: var(--airbnb-white);
+  color: var(--airbnb-hof);
+  border: 1px solid var(--airbnb-border);
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 3px var(--airbnb-shadow);
+}
+
+.resource-type-compact::after {
+  display: none;
+}
+
+.resource-type-compact:hover {
+  background: var(--airbnb-light-gray);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--airbnb-shadow);
+  border-color: var(--airbnb-rausch);
+}
+
+/* Typography - Resource Count Display */
+.summary-card .resource-count-display {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--airbnb-white) !important;
+  text-shadow: none;
+  background: none;
+  padding: 0;
+  border: none;
+  display: inline-block;
+  min-width: auto;
+  text-align: center;
+  font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.resource-type-featured .resource-count-display {
+  font-size: 56px;
+  font-weight: 600;
+  color: var(--airbnb-rausch) !important;
+  margin: 16px 0;
+  text-shadow: none;
+  background: none;
+  padding: 0;
+  border: none;
+  display: inline-block;
+  min-width: auto;
+  text-align: center;
+  font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+/* Typography - Text Styling */
+.microservice-card .text-success {
+  color: var(--airbnb-dark-gray) !important;
+  font-weight: 600 !important;
+  text-shadow: none;
+  font-size: 16px;
+  font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.25;
+}
+
+.microservice-card .text-muted {
+  color: var(--airbnb-foggy) !important;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.microservice-card .badge {
+  font-weight: 500;
+  font-size: 12px;
+  padding: 6px 12px;
+  text-shadow: none;
+  border-radius: 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Card Titles and Headers */
+.resource-type-featured .card-title {
+  color: var(--airbnb-dark-gray) !important;
+  font-weight: 600;
+  font-size: 18px;
+  text-shadow: none;
+  margin-bottom: 16px;
+  font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.25;
+}
+
+.resource-type-featured .discovery-stats,
+.resource-type-featured .text-muted {
+  color: var(--airbnb-foggy) !important;
+  font-weight: 400;
+  font-size: 14px;
+  text-shadow: none;
+}
+
+.resource-type-featured .display-4 {
+  filter: none;
+  font-size: 40px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+/* Main Card Container Styling */
+.card {
+  border: 1px solid var(--airbnb-border);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--airbnb-shadow);
+  transition: all 0.2s ease;
+  overflow: hidden;
+  background: var(--airbnb-white);
+}
+
+.card:hover {
+  box-shadow: 0 6px 16px var(--airbnb-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  background: var(--airbnb-light-gray);
+  border-bottom: 1px solid var(--airbnb-border);
+  padding: 24px;
+}
+
+.card-header h5 {
+  color: var(--airbnb-dark-gray) !important;
+  font-weight: 600;
+  font-size: 20px;
+  text-shadow: none;
+  margin-bottom: 4px;
+  font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.25;
+}
+
+.card-header .text-muted {
+  color: var(--airbnb-foggy) !important;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+}
+
+.card-body {
+  padding: 24px;
+}
+
+/* Summary Card Text Styling */
+.summary-card .h4,
+.summary-card .h5 {
+  color: var(--airbnb-white) !important;
+  text-shadow: none;
+  font-weight: 600;
+  font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Badge Styling - Airbnb style */
+.badge-count {
+  font-weight: 500 !important;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  box-shadow: none;
+  text-shadow: none;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.bg-primary.badge-count {
+  background-color: var(--airbnb-babu) !important;
+  color: var(--airbnb-white) !important;
+}
+
+.bg-warning.badge-count {
+  background-color: var(--airbnb-warning) !important;
+  color: var(--airbnb-white) !important;
+}
+
+.bg-info.badge-count {
+  background-color: var(--airbnb-babu) !important;
+  color: var(--airbnb-white) !important;
+}
+
+.bg-success.badge-count {
+  background-color: var(--airbnb-success) !important;
+  color: var(--airbnb-white) !important;
+}
+
+/* Compact Card Text Styling */
+.resource-type-compact span {
+  font-weight: 500;
+  color: var(--airbnb-hof) !important;
+}
+
+.resource-type-compact .badge {
+  background-color: var(--airbnb-light-gray) !important;
+  color: var(--airbnb-hof) !important;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+/* Progress Bar - Airbnb style */
+.progress {
+  background-color: var(--airbnb-light-gray);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: none;
+  height: 8px;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, var(--airbnb-rausch) 0%, var(--airbnb-arches) 100%);
+  border-radius: 8px;
+  transition: width 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-animated {
+  background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+  background-size: 1rem 1rem;
+  animation: progress-bar-stripes 1s linear infinite;
+}
+
+@keyframes progress-bar-stripes {
+  0% { background-position: 1rem 0; }
+  100% { background-position: 0 0; }
+}
+
+/* Section Dividers */
+.section-divider {
+  height: 1px;
+  background: var(--airbnb-border);
+  margin: 32px 0;
+  border: none;
+}
+
+/* Button Styling - Airbnb style */
+.btn {
+  font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 8px;
+  padding: 12px 24px;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.btn-primary {
+  background: var(--airbnb-rausch);
+  border-color: var(--airbnb-rausch);
+  color: var(--airbnb-white);
+}
+
+.btn-primary:hover {
+  background: #15803d;
+  border-color: #15803d;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.btn-outline-secondary {
+  background: transparent;
+  border-color: var(--airbnb-border);
+  color: var(--airbnb-hof);
+}
+
+.btn-outline-secondary:hover {
+  background: var(--airbnb-light-gray);
+  border-color: var(--airbnb-hof);
+  color: var(--airbnb-dark-gray);
+  transform: translateY(-1px);
+}
+
+/* Text Utilities */
+.text-truncate {
+  font-weight: 500;
+}
+
+.discovery-stats {
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Loading and Animation States */
+.shimmer {
+  background: linear-gradient(90deg, var(--airbnb-light-gray) 25%, var(--airbnb-border) 50%, var(--airbnb-light-gray) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resource-count-display {
+    font-size: 36px !important;
+  }
+  
+  .card-header h5 {
+    font-size: 18px;
+  }
+  
+  .microservice-card .text-success {
+    font-size: 14px;
+  }
+  
+  .resource-type-featured .card-title {
+    font-size: 16px;
+  }
+  
+  .card-header,
+  .card-body {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .resource-count-display {
+    font-size: 28px !important;
+  }
+  
+  .card-header,
+  .card-body {
+    padding: 12px;
+  }
+  
+  .btn {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+}
+
+/* Eco-friendly utility classes */
+.eco-green { color: var(--airbnb-rausch) !important; }
+.eco-emerald { color: var(--airbnb-babu) !important; }
+.eco-forest { color: var(--airbnb-arches) !important; }
+
+/* Focus states for accessibility - Airbnb style */
+.btn:focus,
+.card:focus {
+  outline: 2px solid var(--airbnb-rausch);
+  outline-offset: 2px;
+}

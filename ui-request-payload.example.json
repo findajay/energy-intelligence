@@ -1,0 +1,35 @@
+{
+  "Microservices": [
+    {
+      "MicroserviceName": "sessions",
+      "AppServiceResourceId": "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/example-dev-sessions/providers/Microsoft.Web/sites/example-dev-sessions",
+      "FunctionAppResourceIds": ["/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/example-dev-sessions/providers/Microsoft.Web/sites/example-dev-sessions-worker"],
+      "ServiceBusResourceIds": ["/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/example-dev-sessions/providers/Microsoft.ServiceBus/namespaces/example-sb-dev-sessions"],
+      "DatabaseResourceIds": []
+    },
+    {
+      "MicroserviceName": "auth",
+      "AppServiceResourceId": "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/example-dev-auth/providers/Microsoft.Web/sites/example-dev-auth",
+      "FunctionAppResourceIds": [],
+      "ServiceBusResourceIds": ["/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/example-dev-auth/providers/Microsoft.ServiceBus/namespaces/example-sb-dev-auth"],
+      "DatabaseResourceIds": []
+    },
+    {
+      "MicroserviceName": "users",
+      "AppServiceResourceId": "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/example-dev-users/providers/Microsoft.Web/sites/example-dev-users",
+      "FunctionAppResourceIds": ["/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/example-dev-users/providers/Microsoft.Web/sites/example-dev-users-worker"],
+      "ServiceBusResourceIds": ["/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/example-dev-users/providers/Microsoft.ServiceBus/namespaces/example-sb-dev-users"],
+      "DatabaseResourceIds": []
+    },
+    {
+      "MicroserviceName": "payments",
+      "AppServiceResourceId": "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/example-dev-payments/providers/Microsoft.Web/sites/example-dev-payments",
+      "FunctionAppResourceIds": [
+        "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/example-dev-payments/providers/Microsoft.Web/sites/example-dev-payments-temp",
+        "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/example-dev-payments/providers/Microsoft.Web/sites/example-dev-payments-worker"
+      ],
+      "ServiceBusResourceIds": ["/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/example-dev-payments/providers/Microsoft.ServiceBus/namespaces/example-sb-dev-payments"],
+      "DatabaseResourceIds": []
+    }
+  ]
+}

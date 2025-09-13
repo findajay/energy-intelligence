@@ -1,0 +1,30 @@
+trigger:
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    cd frontend
+    npm install
+    npm run build
+  displayName: 'npm install and build'
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'AzureConnection'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az storage blob upload-batch \
+        --account-name energycalcstore \
+        --auth-mode key \
+        --destination '$web' \
+        --source 'frontend/build' \
+        --overwrite true
